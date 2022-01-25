@@ -1,0 +1,103 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!**{*!*/
+/*!*    border: 1px red solid;*!*/
+/*!*    margin: 10px;*!*/
+/*!*}*!*/
+
+/**{*/
+/*    box-sizing: border-box;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*article{*/
+/*    padding: 10px;*/
+/*    margin: 20px;*/
+/*}*/
+/*.box {*/
+/*    width: 200px;*/
+/*    height: 200px;*/
+/*    border: 5px yellow solid;*/
+/*    margin: 10px;*/
+/*}*/
+
+/*.contentbox{*/
+/*    padding: 20px;*/
+/*    background-color: darkred;*/
+
+/*}*/
+/*.borderbox{*/
+/*    box-sizing: border-box;*/
+/*    padding: 10px;*/
+/*    background-color: blue;*/
+
+/*}*/
+
+/*article {*/
+/*    background-color: pink;*/
+/*    color: purple;*/
+/*}*/
+
+/*section{*/
+/*    border: red 4px solid;*/
+/*    padding: 10px;*/
+/*}*/
+
+/*a[href=C]{*/
+/*    !*background-color: darkred;*!*/
+/*    margin: 20px;*/
+/*    height: 50px;*/
+/*}*/
+
+/*nav li{*/
+/*    list-style: none;*/
+/*    margin: 20px;*/
+/*}*/
+
+/*nav a{*/
+/*    text-decoration: none;*/
+/*    padding: 20px;*/
+/*}*/
+/*!*section header{*!*/
+/*!*    background-color: black;*!*/
+/*!*    color: white;*!*/
+/*!*}*!*/
+
+/*!*section, header{*!*/
+/*!*    border: black 5px dotted;*!*/
+/*!*}*!*/
+
+/*!*header p{*!*/
+/*!*    font-size: 1.5rem;*!*/
+/*!*    text-transform: uppercase;*!*/
+/*!*    text-align: center;*!*/
+/*!*}*!*/
+/*!*article.explanation{*!*/
+/*!*    background-color: orange;*!*/
+/*!*    color: white;*!*/
+/*!*    font-family: "Times New Roman";*!*/
+/*!*}*!*/
+
+/*!*#css-zen-garden{*!*/
+/*!*    background-color: black;*!*/
+/*!*    color: white;*!*/
+/*!*}*!*/
