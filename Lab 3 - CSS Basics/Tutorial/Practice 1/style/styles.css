@@ -1,6 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 80%;
+    margin: auto;
+}
 
+header[role=banner]{
+    /*background-color: yellow;*/
+    margin: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 20px;
+}
 
+nav[role=main-nav]{
+    padding: 20px;
+    text-align: center;
+    background-color: #d1e3e3;
+}
+nav[role=main-nav] li{
+    list-style: none;
+    margin: 10px;
+}
+nav[role=main-nav] a{
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
 
+nav[role=main-nav] a:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+    color: darkred;
+}
+.summary,.preamble{
+    margin: 10px 0px;
+}
+h3{
+   background-color: blue;
+    color: white;
+    padding: 10px 10px;
+}
+article{
+
+    margin: 10px 0;
+    padding: 10px 0;
+}
+
+@media screen and (min-width: 768px) {
+    nav[role=main-nav] ul{
+        display: flex;
+    }
+}
 
 
 
