@@ -77,6 +77,9 @@ p{
     text-align: justify;
 }
 
+/*Continue the styling of the bottom part of the page*/
+
+
 @media screen and (min-width: 768px) {
     nav ul{
         display: flex;
@@ -99,7 +102,6 @@ p{
     }
 
 }
-
 
 
 
