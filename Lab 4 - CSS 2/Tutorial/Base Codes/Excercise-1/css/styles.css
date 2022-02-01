@@ -38,7 +38,9 @@ nav {
     background-color: orange;
     text-align: center;
 }
-
+nav li{
+    list-style: none;
+}
 nav a {
     list-style: none;
     padding: 0.75rem;
@@ -60,7 +62,13 @@ main {
     display: grid;
     place-items: center;
 }
-.btn-buy{
+
+.title {
+    text-align: center;
+    line-height: 2rem;
+}
+
+.btn-buy {
     background-color: orange;
     color: white;
     padding: 1rem;
@@ -71,12 +79,26 @@ main {
     font-weight: bold;
 }
 
-.btn-buy:hover{
+.btn-buy:hover {
     background-color: green;
 }
+
 footer {
     background-color: darkred;
     display: grid;
     place-items: center;
     color: white;
+}
+
+@media screen and (min-width: 40rem) {
+    .container {
+        grid-template-rows: 0.15fr auto 0.2fr;
+        grid-template-columns: 0.15fr auto;
+    }
+    nav{
+        grid-row: 2/3;
+    }
+    main{
+        
+    }
 }
