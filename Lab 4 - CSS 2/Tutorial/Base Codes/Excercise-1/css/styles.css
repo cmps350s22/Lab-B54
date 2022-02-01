@@ -2,38 +2,81 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /*border: 1px red solid;*/
+    /*margin: 10px;*/
+}
+
+html, body {
+    height: 100%;
 }
 
 .container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 0.15fr 0.25fr auto 0.2fr;
+}
+
+.sub-img {
+    width: 200px;
+    height: 200px;
+}
+
+header {
+    /*background-color: green;*/
     margin: 20px;
     display: grid;
-    /*gap: 10px;*/
-    grid-template-columns:  0.4fr 1fr;
-    grid-template-rows: 1fr 1fr;
-
-    grid-template-areas:
-    "box1  box1"
-    "box2  box3";
+    place-items: center;
+    /*text-align: center;*/
+    text-transform: uppercase;
 }
 
-.box1{
-    background-color: blue;
-    color: white;
-    grid-area: box1;
+header span {
+    color: red;
 }
-.box2{
-    background-color: red;
-    color: white;
-    grid-area: box2;
+
+nav {
+    background-color: orange;
+    text-align: center;
 }
-.box3{
+
+nav a {
+    list-style: none;
+    padding: 0.75rem;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
     background-color: green;
-    color: blue;
-    grid-area: box3;
 }
 
-@media screen and (min-width: 60rem)  {
-    .container {
-        grid-template-columns:  1fr 1fr;
-    }
+main {
+    background: url("../img/bg.jpg") center;
+    background-size: cover;
+    color: white;
+    display: grid;
+    place-items: center;
+}
+.btn-buy{
+    background-color: orange;
+    color: white;
+    padding: 1rem;
+    font-size: larger;
+    border-radius: 15px;
+    transition: 0.5s;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-buy:hover{
+    background-color: green;
+}
+footer {
+    background-color: darkred;
+    display: grid;
+    place-items: center;
+    color: white;
 }
