@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px;
+    display: grid;
+    /*gap: 10px;*/
+    grid-template-columns:  0.4fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    grid-template-areas:
+    "box1  box1"
+    "box2  box3";
+}
+
+.box1{
+    background-color: blue;
+    color: white;
+    grid-area: box1;
+}
+.box2{
+    background-color: red;
+    color: white;
+    grid-area: box2;
+}
+.box3{
+    background-color: green;
+    color: blue;
+    grid-area: box3;
+}
+
+@media screen and (min-width: 60rem)  {
+    .container {
+        grid-template-columns:  1fr 1fr;
+    }
+}
