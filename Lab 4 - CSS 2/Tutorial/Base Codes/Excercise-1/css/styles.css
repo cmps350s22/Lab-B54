@@ -98,11 +98,14 @@ footer {
 @media screen and (min-width: 40rem){
     nav ul{
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
     }
 
     .container{
-        grid-template-rows: 0.15fr 0.02fr auto 0.2fr;
+        grid-template-rows: 0.15fr 0.02fr auto 0.1fr;
+    }
+    footer{
+        background-color: orangered;
     }
 }
 @media screen and (min-width: 60rem) {
@@ -130,6 +133,7 @@ footer {
         grid-area: nav
     }
     footer {
-        grid-area: footer
+        grid-area: footer;
+
     }
 }
