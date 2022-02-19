@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="49d562c9-e24c-4249-ba23-198acc413601" name="Default Changelist" comment="" />
+    <list default="true" id="49d562c9-e24c-4249-ba23-198acc413601" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +35,10 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Node.js.arrayMethods.js">
+  <component name="RunManager" selected="Node.js.app.js">
+    <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/../Practice/PARTB/app.js" working-dir="$PROJECT_DIR$/../Practice/PARTB">
+      <method v="2" />
+    </configuration>
     <configuration name="arrayMethods.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/../Practice/PARTA/arrayMethods.js" working-dir="$PROJECT_DIR$/../Practice/PARTA">
       <method v="2" />
     </configuration>
@@ -45,6 +50,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.app.js" />
         <item itemvalue="Node.js.arrayMethods.js" />
         <item itemvalue="Node.js.functions.js" />
         <item itemvalue="Node.js.data-types.js" />
@@ -60,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1644934351981</updated>
       <workItem from="1644934353138" duration="431000" />
-      <workItem from="1644935567326" duration="3532000" />
+      <workItem from="1644935567326" duration="6753000" />
     </task>
     <servers />
   </component>
