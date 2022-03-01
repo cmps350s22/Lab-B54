@@ -20,10 +20,11 @@ noOfRows.addEventListener('change', showCensusData)
 async function handleSubmitCensus(e) {
     e.preventDefault();
     const census = formToObject(e.target)
-    
+
     if(isUpdateMode){
         await repo.updateCensus(census)
         addBtn.value = 'Add'
+        isUpdateMode = false
     }
     else{
         census.id = Date.now().toString()
