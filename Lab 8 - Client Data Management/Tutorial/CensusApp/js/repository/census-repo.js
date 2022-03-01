@@ -40,9 +40,11 @@ export class CensusRepo {
     }
 
     //get all censuses
-    getCensuses() {
+    getCensuses(noOfRecords) {
         try {
-            return db.collection('censuses').get()
+            if(noOfRecords == 'ALl')
+                return db.collection('censuses').get()
+            return db.collection('censuses').limit(noOfRecords).get()
         } catch (e) {
             console.log(e)
         }

@@ -5,13 +5,18 @@ window.onload = async () => {
     await showCensusData();
 }
 
+const noOfRows = document.querySelector('#noOfRows')
 const countriesTable = document.querySelector('#countries')
 const form = document.querySelector('#form')
-form.addEventListener('submit', addCensus)
 
-async function addCensus(e) {
+form.addEventListener('submit', handleSubmitCensus)
+noOfRows.addEventListener('change', showCensusData)
+
+async function handleSubmitCensus(e) {
     e.preventDefault();
     const census = formToObject(e.target)
+    census.id = Date.now().toString()
+
     await repo.addCensus(census)
     await showCensusData();
 }
@@ -27,7 +32,7 @@ function formToObject(form) {
 }
 
 async function showCensusData() {
-    const censuses = await repo.getCensuses();
+    const censuses = await repo.getCensuses(parseInt(noOfRows.value));
     const htmlRows = censuses.map(census => censusToHTMLRow(census)).join(' ')
     countriesTable.innerHTML = `
         <tr>
