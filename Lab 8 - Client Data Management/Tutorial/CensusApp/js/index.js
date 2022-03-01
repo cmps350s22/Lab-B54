@@ -3,6 +3,7 @@ import {CensusRepo} from "./repository/census-repo.js";
 const repo = new CensusRepo()
 window.onload = async () => {
     await showCensusData();
+    window.handleDelete = handleDelete
 }
 
 const noOfRows = document.querySelector('#noOfRows')
@@ -51,14 +52,17 @@ function censusToHTMLRow(census) {
             <td>${census.population}</td>
             <td>
                 <i class="fa fa-edit">Edit</i>
-                <i class="fa fa-tash">Delete</i>
+                <i class="fa fa-trash" onclick="handleDelete('${census.id}')">Delete</i>
             </td>
         </tr>
     
     `;
 }
 
-
+async function handleDelete(id) {
+    await repo.deleteCensus(id)
+    await showCensusData()
+}
 
 
 
