@@ -1,11 +1,15 @@
 import {CensusRepo} from "./repository/census-repo.js";
 
 const repo = new CensusRepo()
+let isUpdateMode = false
+
 window.onload = async () => {
     await showCensusData();
     window.handleDelete = handleDelete
+    window.handleUpdate = handleUpdate
 }
 
+const addBtn = document.querySelector('#add-btn')
 const noOfRows = document.querySelector('#noOfRows')
 const countriesTable = document.querySelector('#countries')
 const form = document.querySelector('#form')
@@ -16,9 +20,17 @@ noOfRows.addEventListener('change', showCensusData)
 async function handleSubmitCensus(e) {
     e.preventDefault();
     const census = formToObject(e.target)
-    census.id = Date.now().toString()
+    
+    if(isUpdateMode){
+        await repo.updateCensus(census)
+        addBtn.value = 'Add'
+    }
+    else{
+        census.id = Date.now().toString()
+        await repo.addCensus(census)
+    }
 
-    await repo.addCensus(census)
+    form.reset()
     await showCensusData();
 }
 
@@ -51,12 +63,20 @@ function censusToHTMLRow(census) {
             <td>${census.country}</td>
             <td>${census.population}</td>
             <td>
-                <i class="fa fa-edit">Edit</i>
+                <i class="fa fa-edit" onclick="handleUpdate('${census.id}')">Edit</i>
                 <i class="fa fa-trash" onclick="handleDelete('${census.id}')">Delete</i>
             </td>
         </tr>
     
     `;
+}
+async function handleUpdate(id){
+    const census = await repo.getCensus(id)
+    document.querySelector('#id').value = census.id
+    document.querySelector('#country').value = census.country
+    document.querySelector('#population').value = census.population
+    addBtn.value = 'Update'
+    isUpdateMode = true
 }
 
 async function handleDelete(id) {
