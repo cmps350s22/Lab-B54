@@ -21,18 +21,18 @@ async function handleSubmitCensus(e) {
     e.preventDefault();
     const census = formToObject(e.target)
 
-    if(isUpdateMode){
+    if (isUpdateMode) {
         await repo.updateCensus(census)
         addBtn.value = 'Add'
         isUpdateMode = false
-    }
-    else{
+    } else {
         census.id = Date.now().toString()
         await repo.addCensus(census)
     }
 
     form.reset()
-    await showCensusData();
+    // await showCensusData();
+    countriesTable.innerHTML += censusToHTMLRow(census)
 }
 
 function formToObject(form) {
@@ -60,7 +60,7 @@ async function showCensusData() {
 
 function censusToHTMLRow(census) {
     return `
-        <tr>
+        <tr class="animate__animated animate__fadeInTopLeft">
             <td>${census.country}</td>
             <td>${census.population}</td>
             <td>
@@ -71,7 +71,8 @@ function censusToHTMLRow(census) {
     
     `;
 }
-async function handleUpdate(id){
+
+async function handleUpdate(id) {
     const census = await repo.getCensus(id)
     document.querySelector('#id').value = census.id
     document.querySelector('#country').value = census.country

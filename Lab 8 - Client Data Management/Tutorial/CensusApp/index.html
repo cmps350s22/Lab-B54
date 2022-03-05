@@ -5,14 +5,18 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 </head>
 <body>
 
 <div class="wrapper">
     <h1 class="page-header">2022 World Population by Census</h1>
-    <h2>Add A Census</h2>
+    <h2 >Add A Census</h2>
 
-    <form class="form" id="form" action="#">
+    <form id="form" action="#" class="form animate__animated animate__shakeX">
         <label for="country">Census Name </label>
         <input name="id" id="id" hidden="true" type="text" value="" hidden="true"></input>
         <input type="text" id="country" name="country" required>
@@ -25,7 +29,7 @@
         </div>
     </form>
     <h2>Census Report</h2>
-    <table class="countries" id="countries">
+    <table class="countries" id="countries" class="form animate__animated animate__fadeInRightBig">
         <!--inject the table data here-->
     </table>
 
