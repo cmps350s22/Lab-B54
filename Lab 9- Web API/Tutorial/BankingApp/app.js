@@ -40,13 +40,11 @@ app.use(express.static('public'))
 //http://localhost:3000/api/accounts?type=Current
 
 app.get('/api/accounts', async (req, res) => {
-    const accounts = await fs.readJson(filePath)
+    let accounts = await fs.readJson(filePath)
     const acctType = req.query.type
-    let filteredAccounts = accounts
     if (acctType)
-        filteredAccounts = accounts.filter(account => account.acctType == acctType)
-
-    res.json(filteredAccounts)
+        accounts = accounts.filter(account => account.acctType == acctType)
+    res.json(accounts)
 })
 
 //http://localhost:3000/api/accounts/3333
@@ -56,6 +54,16 @@ app.get('/api/accounts/:acctNo', async (req, res) => {
     res.json(account)
 })
 
+app.delete('/api/accounts/:acctNo', async (req, res) => {
+    let accounts = await fs.readJson(filePath)
+    const index = accounts.findIndex(account => account.accountNo == req.params.acctNo)
+    if(index >= 0){
+        accounts.splice(index, 1)
+        await fs.writeJson(filePath, accounts)
+        res.send(`successfully deleted ${req.params.acctNo} account`)
+    }else
+        res.send(`account no ${req.params.acctNo} does not exist`)
+})
 
 // app.post()
 // app.put()
