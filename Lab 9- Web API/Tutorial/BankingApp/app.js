@@ -16,6 +16,9 @@
     5. to run the application
         nodemon OR
         nodemon app.js
+
+    6. To get your machine IP address type
+        ipconfig
  */
 import express from 'express';
 
@@ -25,6 +28,10 @@ const port = process.env.PORT || 3000
     export PORT = 1200
     set PORT = 1200
  */
+
+//middleware
+app.use(express.static('public'))
+
 app.listen(port, ()=>{
     console.log(`sever listening on http://localhost:${port}`);
 })
