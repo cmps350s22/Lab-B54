@@ -44,5 +44,17 @@
     "acctType": "Saving",
     "balance": 18000,
     "minimumBalance": 6000
+  },
+  {
+    "accountNo": 2024,
+    "acctType": "Saving",
+    "balance": 3000000,
+    "minimumBalance": 999999
+  },
+  {
+    "accountNo": 7777,
+    "acctType": "Saving",
+    "balance": 7777777,
+    "minimumBalance": 1000
   }
 ]
