@@ -13,4 +13,18 @@
 
        npm i -g nodemon [window]
        sudo npm i -g nodemon [Mac]
+    5. to run the application
+        nodemon OR
+        nodemon app.js
  */
+import express from 'express';
+
+const app = express();
+const port = process.env.PORT || 3000
+    /*
+    export PORT = 1200
+    set PORT = 1200
+ */
+app.listen(port, ()=>{
+    console.log(`sever listening on http://localhost:${port}`);
+})
