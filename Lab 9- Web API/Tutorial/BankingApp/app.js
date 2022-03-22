@@ -35,9 +35,25 @@ set PORT = 1200
 app.use(express.static('public'))
 
 //API
-app.get('/api/accounts', async function getAccounts(request, response) {
+
+//http://localhost:3000/api/accounts?type=Saving
+//http://localhost:3000/api/accounts?type=Current
+
+app.get('/api/accounts', async (req, res) => {
     const accounts = await fs.readJson(filePath)
-    response.json(accounts)
+    const acctType = req.query.type
+    let filteredAccounts = accounts
+    if (acctType)
+        filteredAccounts = accounts.filter(account => account.acctType == acctType)
+
+    res.json(filteredAccounts)
+})
+
+//http://localhost:3000/api/accounts/3333
+app.get('/api/accounts/:acctNo', async (req, res) => {
+    const accounts = await fs.readJson(filePath)
+    const account = accounts.find(account => account.accountNo == req.params.acctNo)
+    res.json(account)
 })
 
 
