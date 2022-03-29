@@ -14,8 +14,7 @@ export default class AccountRepo {
     async getAccounts(acctType) {
         let accounts = await fs.readJson(this.accountsFilePath);
 
-        if (acctType && acctType != 'All')
-            accounts = accounts.filter(acct => acct.acctType === acctType);
+        if (acctType && acctType != 'All') accounts = accounts.filter(acct => acct.acctType === acctType);
 
         //This will add Account methods back to the deserialized account.
         for (const acct of accounts) {
