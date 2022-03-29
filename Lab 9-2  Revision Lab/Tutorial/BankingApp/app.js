@@ -10,6 +10,7 @@ const port = process.env.PORT || 3000
 
 //middleware
 //combined
+app.use(express.static('public'))
 app.use(morgan('combined'))
 app.use(express.json())
 app.use('/api', router)

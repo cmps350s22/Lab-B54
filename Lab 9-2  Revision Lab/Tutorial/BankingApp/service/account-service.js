@@ -1,37 +1,60 @@
-import fs from 'fs-extra'
-const filePath = './data/accounts.json'
+import AccountRepo from "../repository/account-repo.js";
+const accountRepo = new AccountRepo()
 
 export default class AccountService {
     async getAccounts(req, res) {
-        const accounts = await getAccounts(req.query.type)
-        res.json(accounts)
+        try{
+            const accounts = await accountRepo.getAccounts(req.query.type)
+            res.json(accounts)
+        }catch (e) {
+            res.status(500).send(e)
+        }
     }
 
-    getAccount(req, res) {
-        res.send(req.params.acctNo)
+    async getAccount(req, res) {
+        try{
+            const account = await accountRepo.getAccount(req.params.acctNo)
+            res.json(account)
+        }catch (e) {
+            res.status(500).send(e)
+        }
     }
 
-    deleteAccount(req, res) {
-        res.send(req.params.acctNo)
+    async deleteAccount(req, res) {
+        try{
+            const response = await accountRepo.deleteAccount(req.params.acctNo);
+            res.json(response)
+        }catch (e) {
+            res.status(500).send(e)
+        }
     }
 
-    addAccount(req, res) {
-        res.send(req.body)
+    async addAccount(req, res) {
+       try{
+           const response = await accountRepo.addAccount(req.body);
+           res.json(response)
+       }catch (e) {
+           res.status(500).send(e)
+       }
     }
 
-    updateAccount(req, res) {
-        res.send(req.body)
+    async updateAccount(req, res) {
+        try{
+            const response = await accountRepo.updateAccount(req.body);
+            res.json(response)
+        }catch (e) {
+            res.status(500).send(e)
+        }
     }
 
-    addTransaction(req, res) {
-        res.send(req.body)
+    async addTransaction(req, res) {
+        try{
+            const response = await accountRepo.addTransaction(req.body);
+            res.json(response)
+        }catch (e) {
+            res.status(500).send(e)
+        }
     }
 }
 
-async function getAccounts(acctType) {
-    let accounts = await fs.readJson(filePath)
-    if(acctType && acctType!='All')
-        accounts = accounts.filter(account => account.acctType == acctType)
 
-    return accounts
-}
