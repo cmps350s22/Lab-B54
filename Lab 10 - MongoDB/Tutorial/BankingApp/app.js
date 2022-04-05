@@ -6,6 +6,7 @@ import morgan from 'morgan'
 const port = 5000
 const app = express()
 
+const uri = ''
 
 //two types [dynamic , static]
 app.use(express.static('public'))
