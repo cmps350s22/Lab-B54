@@ -28,6 +28,9 @@ accountSchema.virtual('monthlyFee').get(function () {
     if(this.acctType === 'Current')
         return 15
 })
+accountSchema.virtual('acctNo').get(function () {
+    return this._id
+})
 
 export default mongoose.model('Account', accountSchema)
 

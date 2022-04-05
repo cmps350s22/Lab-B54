@@ -1,12 +1,20 @@
 import express from 'express'
 import router from './app/router.js'
 import morgan from 'morgan'
+import mongoose from "mongoose";
 
 //port number
 const port = 5000
 const app = express()
 
-const uri = ''
+const uri = 'mongodb://127.0.0.1:27017/b54-db'
+const options = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}
+mongoose.connect(uri, options, () => {
+    console.log(`database connection established`)
+})
 
 //two types [dynamic , static]
 app.use(express.static('public'))
