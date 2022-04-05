@@ -47,11 +47,29 @@ export default class AccountRepo {
     }
 
     getTransactions() {
-        return Transaction.find()
+        return Transaction.find().populate('acctNo')
     }
 
     getStats() {
-
+        return Account.aggregate(
+            [
+                {
+                    '$group': {
+                        '_id': '$acctType',
+                        'TotalMoney': {
+                            '$sum': '$balance'
+                        },
+                        'HowMany': {
+                            '$sum': 1
+                        }
+                    }
+                }, {
+                '$sort': {
+                    'TotalMoney': -1
+                }
+            }
+            ]
+        )
     }
 
     async sumBalance() {
