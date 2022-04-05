@@ -8,7 +8,8 @@
   {
     "accountNo": 1102,
     "acctType": "Current",
-    "balance": 500
+    "balance": 500,
+    "monthlyFee": 15
   },
   {
     "accountNo": 2003,
