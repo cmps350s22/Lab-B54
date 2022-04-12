@@ -16,8 +16,6 @@ import fs from 'fs-extra'
 
 fs.readJson('data/student.json')
     .then(students => students.length)
-    .then(studentCount => {
-        return `we have ${studentCount} students`
-    })
+    .then(studentCount => `we have ${studentCount} students`)
     .then(message => console.log(message))
     .catch(err => console.log(err))
