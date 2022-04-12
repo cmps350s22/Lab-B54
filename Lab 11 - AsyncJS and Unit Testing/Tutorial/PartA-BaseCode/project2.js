@@ -19,6 +19,7 @@ function setCourseStudents(courses, cb) {
                 const studentNames = students
                     .filter(student => student.courseIds.includes(course.crn))
                     .map(s => `${s.firstname} ${s.lastname}`)
+
                 course.students = studentNames
                 course.noOfStudent = studentNames.length
             }
