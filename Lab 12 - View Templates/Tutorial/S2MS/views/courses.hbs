@@ -1,6 +1,7 @@
 <h1>{{title}} Page</h1>
-<select onchange="getCourses(this.value)">
+<select onchange="getCourses(this.value)" class="form-control">
     {{#each programs as |p|}}
         <option value="{{p.code}}">{{p.name}}</option>
     {{/each}}
 </select>
+<div id="course-table"></div>

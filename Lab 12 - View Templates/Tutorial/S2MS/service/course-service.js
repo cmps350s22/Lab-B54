@@ -31,7 +31,7 @@ export default class CourseService {
      */
     async renderIndex(req, res) {
         try {
-            res.render('index', {title: 'Index'})
+            res.render('index', {title: 'Index' , show : true})
         } catch (e) {
             res.send(500).send(e);
         }
