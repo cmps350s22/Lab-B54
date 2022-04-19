@@ -1,0 +1,6 @@
+<h1>{{title}} Page</h1>
+<select onchange="getCourses(this.value)">
+    {{#each programs as |p|}}
+        <option value="{{p.code}}">{{p.name}}</option>
+    {{/each}}
+</select>

@@ -15,5 +15,6 @@ export default class CourseRepository{
     }
 }
 
-new CourseRepository().getCourses("AUP").then(courses => console.log(courses))
+// new CourseRepository().getPrograms().then(p => console.log(p))
+// new CourseRepository().getCourses("EE").then(courses => console.log(courses))
 
