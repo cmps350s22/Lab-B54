@@ -42,7 +42,7 @@ export default class CourseService {
             const programs = await courseRepository.getPrograms()
             res.render('courses', {
                 title: 'Courses',
-                programs
+                 programs
             })
         } catch (e) {
             res.send(500).send(e);

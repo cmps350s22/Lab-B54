@@ -17,14 +17,14 @@ const template = `
          {{/each}}
         </tbody>
     </table>
-
 `
 async function getCourses(programCode){
     const data = await fetch(`/api/courses/${programCode}`)
     const courses = await data.json()
-    console.log(courses)
+
     const compiledTemplate = Handlebars.compile(template)
     const htmlTableCode = compiledTemplate(({courses}))
 
     document.querySelector('#course-table').innerHTML = htmlTableCode
 }
+
